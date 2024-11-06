@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Inscripciones{% endblock %}
+
+{% block content %}
+    <div class="alert alert-info display-1 text-center">Lista de Inscripciones</div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+                <th>Empresa</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for inscripcion in inscripciones %}
+            <tr>
+                <td>{{ inscripcion.nombre }}</td>
+                <td>{{ inscripcion.telefono }}</td>
+                <td>{{ inscripcion.email }}</td>
+                <td>{{ inscripcion.empresa }}</td>
+                <td>
+                    <a href="{% url 'modificar_inscripcion' inscripcion.id %}" class="btn btn-warning"><i class="fas fa-edit"></i> Modificar</a>
+                    <a href="{% url 'eliminar_inscripcion' inscripcion.id %}" class="btn btn-danger"><i class="fas fa-trash"></i> Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'index' %}" class="btn btn-info mt-3"><i class="fas fa-arrow-left"></i> Volver al Inicio</a>
+{% endblock %}
