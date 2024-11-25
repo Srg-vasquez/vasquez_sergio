@@ -1,13 +1,57 @@
 {% extends 'base.html' %}
+{% load form_filters %}
 
 {% block title %}Modificar Inscripción{% endblock %}
 
 {% block content %}
-    <div class="alert alert-warning display-1 text-center">Modificar Inscripción</div>
-    <form method="post">
-        {{ form.as_p }}
-        {% csrf_token %}
-        <input type="submit" value="Guardar Cambios" class="btn btn-success">
-    </form>
-    <a href="{% url 'listar_inscripciones' %}" class="btn btn-info mt-3"><i class="fas fa-arrow-left"></i> Volver a la Lista</a>
+    <div class="container mt-4">
+        <div class="alert alert-warning text-center display-4">Modificar Inscripción</div>
+        <form method="post" class="row g-3 shadow p-4 rounded bg-light">
+            {% csrf_token %}
+            
+            <div class="col-md-6">
+                <label for="id_nombre" class="form-label">Nombre</label>
+                {{ form.nombre|add_class:"form-control" }}
+            </div>
+            
+            <div class="col-md-6">
+                <label for="id_telefono" class="form-label">Teléfono</label>
+                {{ form.telefono|add_class:"form-control" }}
+            </div>
+            
+            <div class="col-md-6">
+                <label for="id_fecha_seminario" class="form-label">Fecha Seminario</label>
+                {{ form.fecha_seminario|add_class:"form-control" }}
+            </div>
+            
+            <div class="col-md-6">
+                <label for="id_empresa" class="form-label">Empresa</label>
+                {{ form.empresa|add_class:"form-control" }}
+            </div>
+            
+            <div class="col-md-6">
+                <label for="id_email" class="form-label">Email</label>
+                {{ form.email|add_class:"form-control" }}
+            </div>
+            
+            <div class="col-md-6">
+                <label for="id_profesion" class="form-label">Profesión</label>
+                {{ form.profesion|add_class:"form-control" }}
+            </div>
+            
+            <div class="col-12">
+                <label for="id_observaciones" class="form-label">Observaciones</label>
+                {{ form.observaciones|add_class:"form-control" }}
+            </div>
+            
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-success">
+                    <i class="bi bi-save"></i> Guardar Cambios
+                </button>
+                <a href="{% url 'listar_inscripciones' %}" class="btn btn-info">
+                    <i class="bi bi-arrow-left-circle"></i> Volver a la Lista
+                </a>
+            </div>
+        </form>
+    </div>
 {% endblock %}

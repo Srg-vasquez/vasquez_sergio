@@ -1,0 +1,49 @@
+/* Estilo para el header */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px 0;
+    border-radius: 8px;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+header nav a {
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para el footer */
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 0;
+    border-radius: 8px;
+}
+
+footer a {
+    color: #17a2b8;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Espaciado global */
+body {
+    background-color: #f8f9fa;
+}
+
+/* Botones globales */
+.btn {
+    border-radius: 20px;
+}
