@@ -37,11 +37,11 @@ El proyecto consiste en un sistema de inscripción a seminarios, desarrollado co
 
 2. Instala las dependencias necesarias:
    ```bash
-  pip install -r requirements.txt
+   pip install -r requirements.txt
 
 3. Ejecuta las migraciones:
    ```bash
-  py manage.py migrate
+   py manage.py migrate
 
 4. Ejecuta el servidor de desarrollo:
   ```bash
